@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #0C1E26;
+    color: #FFFE15
+}
+
+header{
+    display: flex;
+    justify-content: center;    
+}
+
+header h1{
+    color: #FFFE15;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10rem , 25rem));
+    grid-template-rows: repeat(2, minmax(10rem , 15rem));
+    margin-top: 1rem;
+    gap: 5px;
+}
+
+.box{
+    border: 0.5px solid #FFFE15;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p{
+    font-size: 1.3em;
+}
+.box input{
+    margin-top: 4px;
+}
+
+#color-box{
+    background-color: black;
+    height: 6rem;
+    width:9rem;
+    margin-top:1rem;
+    border-radius: 20px;
+}
+
+#size-box{
+    background-color: black;
+    height: 1rem;
+    width:1rem;
+    margin-top:1rem;
+    border-radius: 20px;
+}
+
+#font-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: transparent;
+    height: 6rem;
+    width:9rem;
+    margin-top:1rem;
+    border-radius: 20px;
+    font-size: 0.5em;
+}
+
+#animation-box{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #ff9fc0;
+  box-shadow: 0 0 20px #ff9fc0;
+  animation: animation 2s ease-in-out infinite;
+  margin-top: 2rem;
+}
+
+@keyframes animation {
+  0% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 50%;
+  }
+
+  50% {
+    transform: scale(1.4) rotate(180deg);
+    border-radius: 20%;
+    box-shadow: 0 0 50px #ff9fc0;
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+    border-radius: 50%;
+  }
+}
