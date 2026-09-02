@@ -7,20 +7,12 @@ function updateClock() {
     seconds = time.getSeconds();
     minutes = time.getMinutes();
     hours = time.getHours();
-    if(seconds == 0){
-        Secound_hand.style.transition = 'none';
-    }
-    else if(minutes == 0){
-        min_hand.style.transition = 'none';
-    }
-    else if(hours == 0){ 
-        hr_hand.style.transition = 'none';
-    }
-    else{
-        Secound_hand.style.transition = 'all 0.05s';
-        min_hand.style.transition = 'all 0.05s';
-        hr_hand.style.transition = 'all 0.05s';
-    }
+    if(seconds == 0){Secound_hand.style.transition = 'none';}
+    else{Secound_hand.style.transition = 'all 0.05s';}
+    if(minutes == 0){min_hand.style.transition = 'none';}
+    else{min_hand.style.transition = 'all 0.05s';}
+    if(hours == 0){hr_hand.style.transition = 'none';}
+    else{hr_hand.style.transition = 'all 0.05s';}
     secoundsDegrees = ((seconds / 60) * 360) + 90;
     Secound_hand.style.transform = `rotate(${secoundsDegrees}deg)`;
     miutesDegrees = ((minutes / 60)*360) +90;
