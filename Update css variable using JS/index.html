@@ -13,32 +13,37 @@
     <main>
         <div id="container">
 
-            <div class="box" id="scale">
-                <p>box size</p>
-                <input type="range" value="0">
-                <div id="size-box"></div>
+            <div class="box" id="display">
+                <p>Enter Image to display</p>
+                <input type="file" name="image" accept="image/*">
+                <div id="display-box"></div>
             </div>
 
             <div class="box" id="color">
                 <p>box color</p>
-                <input type="range" value="0">
+                <input type="color" value="#FFFE15" name="color">
                 <div id="color-box"></div>
             </div>
 
             <div class="box" id="font">
                 <p>Font size</p>
-                <input type="range" value="0">
+                <input type="number" value="0.5" min="0" max="20" data-unit="em" name="size">
                 <div id="font-box">HELLO!!!</div>
             </div>
 
             <div class="box" id="animation">
                 <p>animation speed</p>
-                <input type="range" value="0">
+                <input type="range" value="5" max="7" min="1" data-unit="s" name="speed">
                 <div id="animation-box"></div>
             </div>
 
         </div>
     </main>
+
+    <footer>
+        <hr>
+        <p>created with ❤️ by ANIKET</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
