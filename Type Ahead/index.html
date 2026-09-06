@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Type Ahead</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <header>
+        <h1>Type Ahead</h1>
+    </header>
+    <main>
+        <div id="container">
+            <div id="search">
+                <button id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" placeholder="Enter..." id="searchBar">
+                <button id="priorityButton">country</button>
+            </div>
+            <div id="resultArea">
+                <ul id="results">
+                    <li>Country Name</li>
+                    <li>Or State Name</li>
+                </ul>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
