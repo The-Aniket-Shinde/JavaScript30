@@ -73,7 +73,6 @@ function createData(){
 
 function findMatches(searchWord, finalData) {
     const search = searchWord.toLowerCase().trim();
-    if(search===""){return 0}
     const matches = finalData.filter(place =>
         place.toLowerCase().includes(search)
     );
@@ -97,19 +96,52 @@ function findMatches(searchWord, finalData) {
     return matches;
 }
 
-function display(){
-    let matches = findMatches(this.value , finalData);
-    if(matches===0){
-        results.innerHTML =`<li>Country Name</li><li>Or State Name</li>`
-        return
+// function display(){
+//     let matches = findMatches(this.value , finalData);
+//     if(matches===0){
+//         results.innerHTML =`<li>Country Name</li><li>Or State Name</li>`
+//         return
+//     }
+//     if(matches.length===0){
+//         results.innerHTML =`<li>Nothing Found</li><li>Plz try again</li>`
+//         return
+//     }
+//     results.innerHTML=``;
+//     for (let a = 0; a < 20 && a < matches.length; a++) { 
+//         results.innerHTML +=`<li>${matches[a]}</li>`;
+//     }
+// }
+
+function display() {
+    if(this.value===""){return results.innerHTML = `<li>Enter City</li><li>Or State Name</li>`;}
+
+    let matches = findMatches(this.value, finalData);
+
+    // if (matches === 0) {
+    //     results.innerHTML = `<li>Country Name</li><li>Or State Name</li>`;
+    //     return;
+    // }
+
+    if (matches.length === 0) {
+        results.innerHTML = `<li>Nothing Found</li><li>Plz try again</li>`;
+        return;
     }
-    if(matches.length===0){
-        results.innerHTML =`<li>Nothing Found</li><li>Plz try again</li>`
-        return
-    }
-    results.innerHTML=``;
-    for (let a = 0; a < 20 && a < matches.length; a++) { 
-        results.innerHTML +=`<li>${matches[a]}</li>`;
+
+    results.innerHTML = ``;
+
+    for (let index = 0; index < 20 && index < matches.length; index++) {
+    // for (let index = 0;index < matches.length; index++) {
+        let place = matches[index];
+
+        let highlight = place.replace(
+            // new RegExp(this.value, "gi"), 
+            new RegExp(this.value, "i"), 
+            (match) => {
+                return `<span class="highlight">${match}</span>`;
+            }
+        );
+
+        results.innerHTML += `<li>${highlight}</li>`;
     }
 }
 
